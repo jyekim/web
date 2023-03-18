@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+span {
+	visibility: hidden;		
+}
+
+li:hover span{
+	visibility: visible; 
+	color: violet;
+}
+
+</style>
+</head>
+<body>
+<h3>다음 빈 곳에 숨은 단어?</h3>
+<hr>
+<ul> <!--span태그를 중첩으로 걸어줘야 안에 있는 span에게 hidden을 걸었다는 것을 알게됨  -->
+	<li>I (<span>love</span>) you.
+	<li>CSS is Cascading
+		(<span>Style</span>) Sheet.
+	<li>응답하라 (<span>1988</span>).
+</ul>
+</body>
+</html>
+
+<!-- 
+li태그로 이벤트를 걸면 커서를 줄에 가까이 해도 hidden이 보이지만
+span태그 중첩은 꼭 괄호 안에만 가까이 해야 hidden이 보인다. 
+ -->

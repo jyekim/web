@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#menubar {
+	background: lightblue;
+}
+#menubar ul {
+	margin: 0;
+	padding: 0;
+	width: 570px;
+}
+#menubar ul li { /*inline-block을 쓰면 span태그 처럼 옆으로 나열하듯이 됨  */
+	display: inline-block;
+	list-style-type: none;
+	padding: 0 15px;  
+}
+#menubar ul li a {
+	color: darkblue;
+	text-decoration: none;
+}
+#menubar ul li a:hover {
+	color: white;
+}
+</style>
+</head>
+<body>
+<div id="menubar">
+
+	<ul>
+		<li><a href="#">Home</a></li>
+		<li><a href="#">Espresso</a></li>
+		<li><a href="#">Cappuccino</a></li>
+		<li><a href="#">Cafe Latte</a></li>
+		<li><a href="#">F.A.Q</a></li>
+	</ul>
+</div>
+</body>
+</html>
