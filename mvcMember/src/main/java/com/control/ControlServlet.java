@@ -106,7 +106,7 @@ public class ControlServlet extends HttpServlet {
 		
 		//요청이 들어왔을 때 => http://localhost:8080/mvcmember/member/writeForm.do
 	      String category = request.getServletPath();
-	      System.out.println("category = "+category); // 결과가 /member/writeForm.do
+	      System.out.println("category = "+category); // 결과가 /member/writeForm.do 나온다. 
 	      
 	      CommandProcess com = (CommandProcess)map.get(category); //member.service.WriteFormService
 	      String view = null;

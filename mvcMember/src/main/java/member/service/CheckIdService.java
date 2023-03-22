@@ -27,11 +27,14 @@ public class CheckIdService implements CommandProcess {
 		map.put("id", id);
 		MemberDTO memberDTO = memberDAO.memberLogin(map); 
 		
+		
+		//응답
 		if (memberDTO == null) {
-			return "/member/checkIdOk.jsp";
+			return "/member/checkIdOk.jsp"; 
 		}else {
 			return "/member/checkIdFail.jsp";
 		}
+
 
 
 	}

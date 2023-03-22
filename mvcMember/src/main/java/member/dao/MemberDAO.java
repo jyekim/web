@@ -76,6 +76,7 @@ public class MemberDAO {
 	
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		int su=sqlSession.insert("memberSQL.memberWrite", dto);
+		System.out.println("회원가입성공!");
 		sqlSession.commit();
 		sqlSession.close();
 		//memberSQL.Write
@@ -134,23 +135,6 @@ public class MemberDAO {
 		return result;
 		
 	}
-	
-//	//비번존재여부 
-//		public boolean isExistPwd(String id, String pwd) {
-//			SqlSession sqlSession = sqlSessionFactory.openSession();
-//			boolean exist =false; 
-//			Map<String, String> map = new HashMap<String, String>();
-//			map.put("id", id);
-//			map.put("pwd", pwd);
-//			MemberDTO memberDTO = sqlSession.selectOne("memberSQL.IsExistPwd", map); 
-//			sqlSession.close();
-//
-//			if(memberDTO!=null) exist=true;
-//			
-//			sqlSession.close();
-//			return exist;
-//			
-//		}
 	
 	
 	

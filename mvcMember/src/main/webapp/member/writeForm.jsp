@@ -15,7 +15,7 @@ div {
 </head>
 <body>
 
-<form name="writeForm" method="post" action="write.jsp">
+<form name="writeForm" method="post" action="/mvcMember/member/write.do">
  <table border="1" cellpadding="5" cellspacing="0">
   <tr>
   	<th>이름</th>
@@ -142,7 +142,7 @@ function checkId() {
 		document.getElementById("idDiv").innerHTML = "<font color= 'magenta'>먼저 아이디를 입력하시오</font>";
 		
 	else
-		window.open("/mvcMember/member/check.do?id=" + id, "checkId", "width=500 height=150 left=900 top=500") //즁복체크 확인 창 
+		window.open("/mvcMember/member/checkId.do?id=" + id, "checkId", "width=500 height=150 left=900 top=500") //즁복체크 확인 창 
 }
     
 </script>
