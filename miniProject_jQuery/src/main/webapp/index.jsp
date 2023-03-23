@@ -88,6 +88,10 @@ html {
 				<jsp:include page="${display}" />   		
 			</c:if>
 		</h3>
+		
+		
+<%-- 		<c:if data.result == "success:
+		 --%>
 		</div>
 	</div>
 	<hr />

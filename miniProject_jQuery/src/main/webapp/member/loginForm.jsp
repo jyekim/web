@@ -14,8 +14,10 @@ form[name="loginForm"] div {
 </style>
 </head>
 <body>
-<h3>
-<form name="loginForm">
+
+<form name="loginForm" method="post" action="/miniProject_jQuery/member/login.do">
+
+
  <table border="1" cellpadding="5" cellspacing="0">
    <tr>
   	<th>아이디</th>

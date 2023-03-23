@@ -7,3 +7,4 @@
 	<input type="button" value="회원가입"
 			onclick="location.href='/miniProject_jQuery/member/writeForm.do'"><br><br>
 </div>
+
