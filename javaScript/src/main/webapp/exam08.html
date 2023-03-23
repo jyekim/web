@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<script type="text/javascript">
+let sum = 0;
+let i; 
+for(let i=1; i<=10; i++){
+	document.write("i = " + i +"<br/>");
+	sum += i;
+}//for
+
+
+
+//error, i는 지역변수이기 때문에// error가 났다고 화면에는 표시되지 않는다 확인하려면
+//f12 개발자도구-Uncaught ReferenceError: i is not defined 이런 에러가 뜸 
+//에러 수정하기 위해서는 let i를 for문 바깥으로 선언하거나 또는 var i로 바꾼다.
+//document.write("탈출 i = " + i +"<br/>"); // 조건이 틀려야 for문을 벗어남 빠지는 값이 11이 되면 11은 10보다 크니깐 for문빠져나옴
+
+
+document.write("<h1>1부터 10까지의 합은 " + sum + "입니다.</h1>");
+</script>
+</body>
+</html>
