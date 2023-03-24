@@ -33,7 +33,8 @@
   	 
   	 <input type="hidden" id="check" value="">
   	 
-  	 <input type="button" value="중복체크" onclick="checkId()">
+  	 <input type="button" value="중복체크" id="checkIdBtn">
+  	 
   	 <div id="idDiv"></div>
   	</td>
   </tr>
@@ -132,6 +133,7 @@
 
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript" src="../js/member.js"></script> <!-- 상대주소 --> 
+
 <script type="text/javascript">
 function checkId() {
 	

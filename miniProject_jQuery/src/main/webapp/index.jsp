@@ -65,8 +65,7 @@ html {
 		<h1>
 		<img src="/miniProject_jQuery/image/img3.jpg" width="80" height="80"
 		onclick = "location.href='/miniProject_JQuery/index.jsp'"> MVC를 이용한 미니 프로젝트
-		
-	
+
 		</h1>
 	</div>
 	
@@ -74,7 +73,7 @@ html {
 	
 	<div id="container">
 		<div id="nav">
-			<jsp:include page="./main/nav.jsp"></jsp:include>
+			<jsp:include page="./main/nav.jsp" />
 		</div>
 		<div id="section">
 		<h3>
@@ -89,12 +88,10 @@ html {
 			</c:if>
 		</h3>
 		
-		
-<%-- 		<c:if data.result == "success:
-		 --%>
+
 		</div>
 	</div>
-	<hr />
+	
 	
 	
 	

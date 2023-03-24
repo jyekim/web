@@ -38,10 +38,8 @@ public class LoginService implements CommandProcess {
 			session.setAttribute("memId", id);
 			session.setAttribute("memPwd", pwd);
 			session.setAttribute("memEmail", memberDTO.getEmail1()+"@"+memberDTO.getEmail2()); //이메일을 따로 만들어줘야함 
-			
-			
-			
-//			return  "/index.jsp"/* "/member/loginOk.jsp" */;
+
+		
 			return  "/member/loginOk.jsp";
 		}
 		

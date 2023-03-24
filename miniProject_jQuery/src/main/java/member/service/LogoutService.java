@@ -12,8 +12,7 @@ public class LogoutService implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		
 		HttpSession session = request.getSession();
-		session.removeAttribute("memName");
-		session.removeAttribute("memId");
+		session.invalidate();
 		return "/member/logout.jsp";
 	}
 
