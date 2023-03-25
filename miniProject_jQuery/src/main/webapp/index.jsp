@@ -79,8 +79,9 @@ html {
 		<h3>
 		
 			<c:if test="${ empty display }">
-				저희 홈페이지를 방문해주셔서 감사합니다.<br>
-				좋은 하루 되세요!<br>
+				<center>온 세상이 나를 돕는다!<br></center>
+				<center>☆★LUCKY☆★<br></center>
+				<br><br>
 				<center><img src= "./image/img2.jpg" width="400" height="400"></center>
 			</c:if>
 			<c:if test="${not empty display }">  

@@ -150,9 +150,9 @@ $('#loginBtn').click(function(){ /*로그인 화면에서 로그인버튼 클릭
 				}
 			},
 			
-			error: function(err){ //에러가 났을때 띄워달라는것
-				console.log(err);
-			}
+		    error: function(err){
+		         console.log(err);
+		      }
 			
 		});
 	}
