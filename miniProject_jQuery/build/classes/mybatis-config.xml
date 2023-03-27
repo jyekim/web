@@ -7,6 +7,7 @@
  	
  	<typeAliases><!--별칭 쓰는 것 mapper에서 user라고 간편히 쓸려고  -->
  		<typeAlias type ="member.bean.MemberDTO" alias="member" />	
+ 		<!-- <typeAlias type ="board.bean.BoardDTO" alias="board" /> -->
  	</typeAliases>
  
  
@@ -25,6 +26,7 @@
  	
  	<mappers> <!--resource(자원)의 위치는 .으로 찾으면 절대 못찾음 그래서 /로 알려줘야함 그리고 mapper파일 여러개 만들 수 있음  -->
  		<mapper resource ="member/dao/memberMapper.xml"/>
+ 	<!-- 	<mapper resource ="board/dao/boardMapper.xml"/> -->
  	</mappers>
  	
  </configuration>

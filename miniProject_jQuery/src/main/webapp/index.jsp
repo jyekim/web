@@ -64,9 +64,11 @@ html {
 	<div id="header">
 		<h1>
 		<img src="/miniProject_jQuery/image/img3.jpg" width="80" height="80"
-		onclick = "location.href='/miniProject_JQuery/index.jsp'"> MVC를 이용한 미니 프로젝트
-
+		onclick = "location.href='/miniProject_JQuery/index.jsp'" 
+		style="cursor: pointer;"> MVC를 이용한 미니 프로젝트
 		</h1>
+		<jsp:include page="./main/menu.jsp" />
+
 	</div>
 	
 	
@@ -76,7 +78,7 @@ html {
 			<jsp:include page="./main/nav.jsp" />
 		</div>
 		<div id="section">
-		<h3>
+		<h3></h3>
 		
 			<c:if test="${ empty display }">
 				<center>온 세상이 나를 돕는다!<br></center>
@@ -87,7 +89,7 @@ html {
 			<c:if test="${not empty display }">  
 				<jsp:include page="${display}" />   		
 			</c:if>
-		</h3>
+		
 		
 
 		</div>

@@ -10,7 +10,10 @@ public class WriteFormService implements CommandProcess {
 	@Override
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		request.setAttribute("display", "/member/writeForm.jsp");
-		return "/member/writeForm.jsp";
+		return "/index.jsp";
 	}
 
 }
+
+
+//

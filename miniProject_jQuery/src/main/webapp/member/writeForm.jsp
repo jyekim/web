@@ -158,17 +158,19 @@ function checkId() {
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-#writeFormdiv {
-	color: red;
-	font-size: 8pt;
-	font-weight: bold;
+
+<style>
+#writeForm div {
+   color: red;
+   font-size: 8pt;
+   font-weight: bold;
 }
 </style>
+
 </head>
 <body>
 
-<form name="writeForm" method="post" action="/mvcMember/member/write.do">
+<form name="writeForm" method="post" action="">
  <table border="1" cellpadding="5" cellspacing="0">
   <tr>
   	<th>이름</th>
@@ -186,7 +188,7 @@ function checkId() {
   	 
   	 <input type="hidden" id="check" value="">
   	 
-  	 <input type="button" value="중복체크" id="checkIdBtn">
+  	<!--  <input type="button" value="중복체크" id="checkIdBtn"> -->
   	 
   	 <div id="idDiv"></div>
   	</td>
@@ -275,8 +277,8 @@ function checkId() {
   
   <tr>
   	<td colspan="2" align="center">
-  	 <input type="button" value="회원가입" onclick="checkWrite()">
-  	 <input type="button" value="다시작성" onclick=>
+  	 <input type="button" value="회원가입" id="writeBtn">
+  	 <input type="reset" value="다시작성" onclick=>
   	</td>
   </tr>
   
@@ -284,51 +286,52 @@ function checkId() {
  </table>
 </form>
 
+<script type="text/javascript" src="../js/member.js"></script>
 
-<!-- <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script> -->
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js">
+
 <script type="text/javascript" src="../js/jquery-3.6.4.min.js"></script>
 
 <script type="text/javascript">
-$('#checkIdBtn').click(function(){
-	$('#idDiv').empty();
-	
-	if($('#id').val() == '' ) {
-		$('#idDiv').text('아이디 입력');
-		$('#idDiv').css('font-size', '10pt');
-	} 
-	else {
+// 중복아이디 체크
+$('#id').focusout(function(){
+	if($('#id').val() == ''){
+		$('#idDiv').text('먼저 아이디를 입력');
+		$('#idDiv').css('color','magenta');
+	}else{
+		//서버로 요청 
+		$.ajax({
+			type:'post',
+			url: '/miniProject_jQuery/member/checkId.do',
+			data: 'id='+$('#id').val(),// 서버로 보내는 데이터
+			dataType: "text", //서버로부터 받은 데이터형, "text", "html", "xml", "json"
+			success: function(data){
+				data = data.trim();
+				
+				if(data == 'exist'){
+					$('#idDiv').text('사용불가능');
+					$('#idDiv').css('color', 'red');
+					
+					
+					
+				}else if(data == 'non-exist'){
+					$('#idDiv').text('사용 가능');
+					$('#idDiv').css('color', 'blue');
+					
+					
+					//중복체크 확인용 
+					$('#check').val($('#id').val());
+				}
+			},
+			error: function(err){
+				console.log(err);
+			}
+		});
+	}
+});
 
-	   $.ajax({
-		type:'post',
-		
-		url: '/miniProject_jQuery/member/checkId.do',
-		
-		data: 'id='+$('#id').val(),
-		
-		dataType: 'text', 
-		
-		
-		success: function(data) {
-			alert("a");
-			data = data.trim();
-			if(data == 'exist') {
-                $('#idDiv').text('사용 불가능');
-                $('#idDiv').css('color', 'red');
-				 /* $('#checkBtn').prop('disabled', true) // 사용할 수 있는 ID면 버튼을 비활성화 시킨다.  */
-            } else if(data == 'non-exist'){
-            	window.open("")
-				$('#idDiv').text('사용 가능');
-				$('#idDiv').css('color', 'blue');
-            }
-        },
-        error: function(err){ //에러가 났을때 띄워달라는것
-			console.log(err);
-        }
-    });  
-}
-
-}); 
-   
     
 
     

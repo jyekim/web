@@ -38,7 +38,7 @@
 	
 	<!--중복 아이디체크  -->
 	<select id="isExistId"  parameterType="String" resultType="member">
-		select * from member where id=#{id} and pwd=#{pwd}
+		select * from member where id=#{id}
 	</select>
 	
 	

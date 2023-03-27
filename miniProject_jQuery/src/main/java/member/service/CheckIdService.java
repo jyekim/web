@@ -22,17 +22,16 @@ public class CheckIdService implements CommandProcess {
 		
 		//DB
 		MemberDAO memberDAO = MemberDAO.getInstance();
-		 
-		Map<String, String> map = new HashMap<String,String>();
-		map.put("id", id);
-		MemberDTO memberDTO = memberDAO.memberLogin(map); 
-		
+
+		boolean existId = false;
+		existId = memberDAO.isExistId(id);		
+
 		
 		//응답
-		if (memberDTO == null) {
-			return "/member/checkIdOk.jsp"; 
-		}else {
+		if (existId){
 			return "/member/checkIdFail.jsp";
+		}else {
+			return "/member/checkIdOk.jsp"; 
 		}
 
 

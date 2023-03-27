@@ -113,7 +113,7 @@ public class MemberDAO {
 	}
 	
 	
-	//회원아이티체크 기능 
+	//회원체크 기능 
 	public MemberDTO getMember(String id) {
 		SqlSession sqlSession = sqlSessionFactory.openSession(); //생성
 		MemberDTO memberDTO = sqlSession.selectOne("memberSQL.getMember", id); 
@@ -143,8 +143,10 @@ public class MemberDAO {
 		boolean existId = false;
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		MemberDTO memberDTO = sqlSession.selectOne("memberSQL.isExistId", id);
-		if(memberDTO != null) existId =true;
+		
+		if(memberDTO != null) existId = true;
 		sqlSession.close();
+		
 		return existId;
 		
 	}

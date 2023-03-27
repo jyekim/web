@@ -12,7 +12,7 @@ public class LogoutService implements CommandProcess {
 	public String requestPro(HttpServletRequest request, HttpServletResponse response) {
 		
 		HttpSession session = request.getSession();
-		session.invalidate();
+		session.invalidate(); //세션들 무효화
 		return "/member/logout.jsp";
 	}
 
