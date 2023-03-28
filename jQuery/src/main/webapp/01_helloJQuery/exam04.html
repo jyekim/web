@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 id="hello"></h1>
+<p id="text">안녕하세요 제이쿼리!</p>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script type="text/javascript">
+$(function(){ /*이게 자바스크립트 onload와 같은 역할임  */
+	var h1 =$('#hello')
+	h1.css('color', 'red');
+	h1.html('Hello jQuery');
+	
+	alert($('#text').text());  /* text텍스트는 값을 가져온다는 것  */
+});
+
+</script>
+</body>
+</html>

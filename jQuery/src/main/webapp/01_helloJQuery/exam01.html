@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 id="hello"></h1>
+<!-- <script type="text/javascript" src="../js/jquery-3.6.4.min"></script> -->
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script type="text/javascript">
+function hello() {
+	var h1 = document.getElementById('hello')  /* hello를 호출해야 화면 상 글자가 나옴  element는 모든 태그의 조상임*/
+	//alert(h1.tagName)
+	h1.innerHTML='Hello jQuery';
+	h1.innerText = 'Hello jQuery'; 
+}
+
+//window.onload=function() {
+//	hello();
+//}
+//javascriopt의 onload 이벤트와같은 효과
+jQuery(hello);
+
+</script>
+</body>
+</html>
+
+
+
+<!-- 
+$()
+- 그냥 이름이 $인 함수 그 자체이다. $ 함수를 호출하는 것이다.
+- jQuery 라이브러리 내부를 보면 window.jQuery = window.$ = jQuery 로 동일한 코드이다.
+
+
+Ajax는 특별한 library가 필요하지 않음 
+JQuery는 *js가 필요함 
+ -->
