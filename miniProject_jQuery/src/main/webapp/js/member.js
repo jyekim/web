@@ -77,7 +77,8 @@ function checkWrite(){/*writeform창에서 회원가입 이름 비번 중복체�
 		document.getElementById("idDiv").innertext="중복체크 하세요";
 	else
 		document.writeForm.submit();
-}*/
+*/
+}
 
 /* 다음 우편번호 */
 function execDaumPostcode() {
@@ -106,4 +107,4 @@ function execDaumPostcode() {
             }
         }).open();
     }
-   }
+   

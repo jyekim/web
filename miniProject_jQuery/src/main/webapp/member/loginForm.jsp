@@ -12,16 +12,24 @@ form[name="loginForm"] div {
 	font-size: 8pt;
 	font-weight: bold;
 }
+form[name="loginForm"] {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 0 auto;
+   text-align: left;
+}
 </style>
 </head>
 <body>
 
 <form name="loginForm" id="loginForm">
-
-
+	<a href="../index.jsp" style="text-decoration: none;">
+		<h1>로그인</h1>
+	</a>
  <table border="1" cellpadding="5" cellspacing="0">
    <tr>
-  	<th>아이디</th>
+  	<th >아이디</th>
   	<td>
   	 <input type="text" name="id" id="id" >
   	 <div id="idDiv"></div>
@@ -39,7 +47,8 @@ form[name="loginForm"] div {
    <tr>
   	<td colspan="2" align="center">
   	 <input type="button" value="로그인" id="loginBtn"> <!--id속성은 유일하게 하나일떄 class는 여러개   -->
-	 <input type="button" value="회원가입" onclick="location.href='writeForm.jsp'">
+	 <input type="button" value="회원가입" 
+	 onclick="location.href='writeForm.do'">
   	</td>
   </tr>
  </table>
