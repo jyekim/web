@@ -17,9 +17,9 @@ $(function(){
 	 var index = 1;
 	 
 	 $('img').click(function(){
-		 index = (index % 4) + 1;
+		 index = (index % 4) + 1;  /*1의 값을 4로 나눠서 그 값을 +1 하면 순서대로 이미지 나옴  */
 		 
-		 $(this).attr('src', '../img/'+index+'.jpg');
+		 $(this).attr('src', '../img/'+index+'.jpg');  /* this가 img태그를 뜻함  */
 	 });
 });
 </script>

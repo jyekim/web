@@ -21,9 +21,10 @@ $(function(){
 	console.log();
 	
 	var check = $('#check'); //id가 check인 태그를 가져오라는 뜻
-	console.log('check =' + check.tagName);
-	console.log('attr = ' +check.attr('checked')); //checked
-	console.log('prop = ' +check.prop('checked')); //true
+	console.log('check = ' + check);  //[object Object]
+	console.log('check = ' + check.prop('tagName')); // input 주어진 값으로 가져옴 
+	console.log('attr =  ' +check.attr('checked')); //checked
+	console.log('prop =  ' +check.prop('checked')); //true
 	
 	
 	var check2 = document.querySelector('#check'); 
