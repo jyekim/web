@@ -92,5 +92,24 @@ $('#checkBWBtn').click(function(){
 
 
 </script>
+
+
+<script type="text/javascript">
+function checkBoardWrite(){
+
+	
+	if(document.getElementById("subject").value == ""){
+		document.getElementById("subjectDiv").innerText = "제목 입력";
+		document.getElementById("subject").focus();
+	
+	}else if(document.getElementById("content").value == ""){
+		document.getElementById("contentDiv").innerText = "내용 입력";
+		document.getElementById("content").focus();
+	
+	}else
+		document.boardWriteForm.submit();
+}
+</script>
+
 </body>
 </html>

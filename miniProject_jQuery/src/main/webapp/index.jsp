@@ -29,7 +29,7 @@ html {
 #container {
    margin: auto;
    width: 1100px;
-   height: 500px;
+  /*  height: 500px; */
 }
 
 #container:after {

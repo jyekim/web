@@ -54,7 +54,7 @@ td .subjectA:hover {color : cyan; text-decoration: underline;}
 		<!-- 동적처리 -->
 		
 </table>
-<div style=" margin-top: 15px; width:800px; text-align : center;">
+<div id="boardPagingDiv" style=" margin-top: 15px; width:800px; text-align : center;">
 </div>
 
 <script type="text/javascript">	
@@ -65,6 +65,9 @@ function boardPaging(pg) {
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script type="text/javascript" src="../js/boardList.js"></script>
+
+
+
 
 
 </body>
