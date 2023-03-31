@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-#boardWriteForm:div {
+#boardWriteForm div {   /*이게 왜 안 먹혔는지 이제야 알았음 form name 뒤에 : 를 써서 div가 안 먹힘  */
 	font-size :8pt;
 	color:red;
 	font-weight:bold;

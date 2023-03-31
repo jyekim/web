@@ -6,9 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
 <style type= "text/css">
-form[name="writeForm"] div {
+#writeForm div {
    color: red;
    font-size: 8pt;
    font-weight: bold;
@@ -16,8 +15,7 @@ form[name="writeForm"] div {
 </style>
 </head>
 <body>
-
-<form name="writeForm" method="post" action="">
+<form id="writeForm" method="post" action=""> <!--form의 id와 name일때 스타일 시트가 안 먹힐 수 있으니 유의해야함  -->
  <table border="1" cellpadding="5" cellspacing="0">
   <tr>
   	<th>이름</th>

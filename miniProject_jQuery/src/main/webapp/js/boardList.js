@@ -12,15 +12,16 @@ $(document).ready(function(){
 			//console.log(data.list[1],name);
 			
 			$.each(data.list, function(index,items){
-				console.log(index + ", " + items.seq + ', name:' + items.name);
+				console.log(index + ", seq=" + items.seq + ', name=' + items.name);
 				
 				$('<tr/>').append($('<td/>',{
 					align: 'center',
 					text: items.seq
+					
 				})).append($('<td/>',{
 					}).append($('<a/>', {
 						href: '#',
-						class: 'subjectA',
+						class: 'subjectA subjectA_'+items.seq,
 						text: items.subject
 					}))
 				).append($('<td/>',{
@@ -33,9 +34,21 @@ $(document).ready(function(){
 					align: 'center',
 					text: items.logtime
 				})).appendTo($('#boardListTable'))  
-			});
+				
+				////답글///////
+				for(var i=1; i<=items.lev; i++){
+					$('.subjectA_'+items.seq).before("&emsp;")
+				}
+				if(items.pseq != 0){
+					$('.subjectA_'+items.seq).before($('<img/>',{
+						'src': '/miniProject_jQuery/image/reply.gif'
+					}));	
+				
+				}
+				
+			}); //each문이 for문과 똑같음 //여기까지 each문
 			
-		//페이징 처리
+			//페이징 처리
 			$('#boardPagingDiv').html(data.pagingHTML);
 			
 			//로그인 여부
@@ -51,9 +64,7 @@ $(document).ready(function(){
 					
 					location.href = '/miniProject_jQuery/board/boardView.do?seq='+seq+'&pg='+pg;
 				}
-					
 			});
-			
 		},
 		error: function(err){
 			console.log(err);

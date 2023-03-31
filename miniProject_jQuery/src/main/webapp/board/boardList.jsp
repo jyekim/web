@@ -1,12 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import ="board.dao.BoardDAO" %>
-<%@ page import ="board.bean.BoardDTO" %>
-<%@ page import ="board.bean.BoardPaging" %>
-<%@page import="java.text.SimpleDateFormat"%>
-<%@ page import ="java.util.HashMap" %>
-<%@ page import ="java.util.List" %>
-<%@ page import ="java.util.Map" %>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
@@ -33,14 +27,22 @@ td .subjectA:hover {color : cyan; text-decoration: underline;}
 	padding: 5px;
 	margin: 5px;
 	cursor: pointer;
-	/* border:1px solid black;*/
+	/
+	* border:1px solid black;*/
+}
+#boardListTable th {
+	font-size: 15pt;
+}
+
+#boardListTable td {
+	font-size: 13pt;
 }
 </style> 
 </head>
 <body>
 
 <input type= "text" id="pg" value="${pg }">
-
+<input type="text" id="memId" value="${memId }">
 <table id="boardListTable" border="1" cellpadding="5" cellspacing="0" frame="hsides" rules="rows">
 	<tr>
 		<th width="100">글번호</th>

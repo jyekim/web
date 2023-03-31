@@ -1,22 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import ="board.dao.BoardDAO" %>
-<%@ page import ="board.bean.BoardDTO" %>
-<%@ page import ="board.bean.BoardPaging" %>
-<%@page import="java.text.SimpleDateFormat"%>
-<%@ page import ="java.util.List" %>
 
-
-<%
-		//데이터
-		int seq = Integer.parseInt(request.getParameter("seq"));
-		int pg = Integer.parseInt(request.getParameter("pg"));
-		
-		//db
-		BoardDAO boardDAO = BoardDAO.getInstance();
-		BoardDTO boardDTO = boardDAO.getBoard(seq);
-
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,7 +41,7 @@
   </tr>
   
   </table>
-  		<input type="button" value="목록" onclick="location.href='/miniProject_jQuery/board/boardList.do? pg=${pg}'">
+  		<input type="button" value="목록" onclick="location.href='/miniProject_jQuery/board/boardList.do?pg=${pg}'">
  	
  	
  	

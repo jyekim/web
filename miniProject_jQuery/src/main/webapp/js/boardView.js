@@ -3,10 +3,11 @@ $(document).ready(function(){
 	$.ajax({
 		type: 'post',
 		url: '/miniProject_jQuery/board/getBoard.do',
-		data: 'seq=' + $('#seq').val(), //{'seq': $('seq').val()}  만약 json객체가 더 있으면 쉼표 
+		data: {'seq': $('#seq').val(),
+               'pg': $('#pg').val()}, //{'seq': $('seq').val()}  만약 json객체가 더 있으면 쉼표 
 		dataType: 'json',
 		success: function(data){
-			alert(JSON.stringify(data));
+			//alert(JSON.stringify(data));
 			//console.log(JSON.stringify(data));
 			
 			$('#subjectSpan').text(data.subject);
@@ -32,7 +33,14 @@ $(document).ready(function(){
 
 //글 수정 폼 
 $('#boardUpdateFormBtn').click(function(){
-	$('#boardViewForm').attr('action','/miniProject/board/boardUpdateForm.do');
-	$('#boardViewForm').submit(); //submit은 name 속성만 가져감 	
+	$('#boardViewForm').attr('action','/miniProject_jQuery/board/boardUpdateForm.do');
+	$('#boardViewForm').submit(); //submit은 name 속성만 가져감 	그래서 seq랑 pg만 가져감
 	
+});
+
+
+//답글쓰기 폼
+$('#boardReplyFormBtn').click(function(){
+	$('#boardViewForm').attr('action','/miniProject_jQuery/board/boardReplyForm.do');
+	$('#boardViewForm').submit(); //submit은 name 속성만 가져감 	그래서 seq랑 pg만 가져감
 });
