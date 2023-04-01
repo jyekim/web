@@ -64,10 +64,16 @@ html {
 	<div id="header">
 		<h1>
 		<img src="/miniProject_jQuery/image/img3.jpg" width="80" height="80"
-		onclick = "location.href='/miniProject_JQuery/index.jsp'" 
+		onclick = "location.href='/miniProject_jQuery/index.jsp'" 
 		style="cursor: pointer;"> MVC를 이용한 미니 프로젝트
 		</h1>
 		<jsp:include page="./main/menu.jsp" />
+		
+		
+	<!-- 	
+	메인화면 옆 이미지클릭 했을 때 안 넘어가게 되는 이유는 대소문자 구별이 안되어있어서 그런거였음,,,, 어이없네
+	<img src="../image/img1.jpg" width="70" height="70" alt="고양" 
+			 style="cursor: pointer;"> -->
 
 	</div>
 	

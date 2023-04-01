@@ -26,11 +26,12 @@ public class BoardWriteService implements CommandProcess {
 		String name = (String) session.getAttribute("memName");
 		String email = (String) session.getAttribute("memEmail"); //이 이메일 세션은 없으니 만들러 가야함 어디로? login으로 
 		
-		System.out.println(id);
-		System.out.println(name);
-		System.out.println(email);
-		System.out.println(subject);
-		System.out.println(content);
+		//제대로 세션이 들어오고 있는지 하나씩 찍어봐서 확인할 수 있음 
+//		System.out.println(id);
+//		System.out.println(name);
+//		System.out.println(email);
+//		System.out.println(subject);
+//		System.out.println(content);
 		
 				
 		Map<String, String> map = new HashMap<String, String>(); 
