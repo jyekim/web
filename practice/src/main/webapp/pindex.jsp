@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,15 +14,20 @@ a:hover {color : purple; text-decoration: underline;}
 a:active{color : pink; text-decoration:none;}
 </style>
 </head>
-<div>
 <body>
-<div class="container">
-	<div class="sinin-container"></div>
-		<h2>****메인 화면 ****</h2>
-	<form class="form-container" action="sign-in" method="post">
-	<input type="text" classname="username" name="username"  placeholder="아이디입력" autocomplete="off"/>
-	<input type="password" classname="pwd" name="pwd" placeholder="비밀번호입력"autocomplete="off">
-	<a href="forget-password" class="help"> </a>
+<div id ="header">
+		<h1>
+		<img src="/practice/image/post.png" width="100" height="100"
+		onclick= "location.href='/practice/pindex.jsp'"
+		style="cursor:pointer;"> 연습연습
+		</h1>
+		<%-- <jsp:inclue page ="./main/pmenu.jsp" /> 
+		왜 이부분을 추가하면 에러가 뜨는건지 모르겠음!!!!!
+		그냥 카피만 했는데 왜죠???!!!!!!!!!!!!!!!!!!!!
+	
+		--%>
+
+</div>
 
 
 <%-- <% if(session.getAttribute("memId") == null) {%>

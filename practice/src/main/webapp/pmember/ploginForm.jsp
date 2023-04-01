@@ -15,10 +15,17 @@ onclick="location.href='../pindex.jsp'" style="cursor: pointer;"> <!--홈으로 
    <tr>
   	<th>아이디</th>
   	<td>
-  	 <input type="text" name="id" id="id" size="30" placeholder="아이디 입력">
+  	 <input type="text" name="id" id="id" size="50" placeholder="아이디 입력">
   	 <div id="idDiv"></div>
   	</td>
    </tr>
+   <th>비밀번호</th>
+   <td>
+   <input type="text" name="pwd" id="pwd" size="50" placeholder="비밀번호 입력">
+   <div id="pwdDiv"></div>
+   </td>
+   
+   
 
 </body>
 </html>
