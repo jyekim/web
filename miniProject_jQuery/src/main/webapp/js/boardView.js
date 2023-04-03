@@ -39,8 +39,17 @@ $('#boardUpdateFormBtn').click(function(){
 });
 
 
+//글 삭제 폼 -모든 글들은 삭제 후 1페이지로 보여준다.
+$('#boardDeleteBtn').click(function(){
+	$('#boardViewForm').attr('action','/miniProject_jQuery/board/boardDeleteForm.do');
+	$('#boardViewForm').submit(); 
+});
+
+
 //답글쓰기 폼
 $('#boardReplyFormBtn').click(function(){
 	$('#boardViewForm').attr('action','/miniProject_jQuery/board/boardReplyForm.do');
 	$('#boardViewForm').submit(); //submit은 name 속성만 가져감 	그래서 seq랑 pg만 가져감
 });
+
+

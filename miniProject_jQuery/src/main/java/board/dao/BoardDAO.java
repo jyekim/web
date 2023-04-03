@@ -115,6 +115,24 @@ public class BoardDAO {
 		sqlSession.commit();
 		sqlSession.close();
 	}
+
+
+	public void boardUpdate(Map<String, String> map) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		sqlSession.update("boardSQL.boardUpdate", map);
+		sqlSession.commit();
+		sqlSession.close();
+		
+	}
+
+
+	public void boardDelete(String seq) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		sqlSession.delete("boardSQL.boardDelete", Integer.parseInt(seq));  //DB가 sql에서는 int형으로 잡혀져있으니
+		sqlSession.commit();
+		sqlSession.close();
+		
+	}
 	
 	
 	

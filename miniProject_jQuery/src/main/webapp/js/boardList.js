@@ -53,9 +53,11 @@ $(document).ready(function(){
 			
 			//로그인 여부
 			$('.subjectA').click(function(){
-				if($('#memId').val() == '')
+				if($('#memId').val() == ''){
 					alert('먼저 로그인하세요');
-				else{
+					
+					location.href ='/miniProject_jQuery/member/loginForm.do';	
+				}else{
 					//console.log($(this).parent().prev().prop('tagName'));
 					
 					var seq = $(this).parent().prev().text();

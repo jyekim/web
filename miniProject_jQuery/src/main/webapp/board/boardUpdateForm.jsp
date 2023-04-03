@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-#boardWriteForm div {   /*이게 왜 안 먹혔는지 이제야 알았음 form name 뒤에 : 를 써서 div가 안 먹힘  */
+#boardUpdateForm div {   
 	font-size :8pt;
 	color:red;
 	font-weight:bold;
@@ -14,10 +14,11 @@
 </style>
 </head>
 <body>
-<form id="boardWriteForm">  <!-- action="/miniProject_jQuery/board/boardWrite.do" -->
+<form id="boardUpdateForm">  <!-- action="/miniProject_jQuery/board/boardWrite.do" -->
+	<input type="hidden" name="seq" value="${seq }">
 
 
-<h3>글쓰기</h3>
+<h3>글수정</h3>
   <table border="1" cellpadding="5" cellspacing="0">
  <tr>
   	<th>제목</th>
@@ -38,8 +39,8 @@
   
   <tr>
   	<td colspan="2" align="center">
-  	 <input type="button" value="글작성" id="checkBWBtn">
-  	 <input type="reset" value="다시작성">
+  	 <input type="button" value="글 수정" id="boardUpdateFormBtn">
+  	 <input type="reset" value="다시작성" onclick="location.reload()">
   	 
   	</td>
   </tr>
@@ -51,7 +52,25 @@
 <script type="text/javascript" src="../js/jquery-3.6.4.min.js"></script>
 <script type="text/javascript">
 $(function(){
-$('#checkBWBtn').click(function(){
+	$.ajax({
+		type: 'post',
+		url: '/miniProject_jQuery/board/boardUpdateForm.do',
+		data: 'seq=' + ${seq},
+		dataType: 'json',
+		success: function(data){
+			alert(JSON.stringify(data));
+			
+				$('#subject').val(data.subject);
+				$('#content').val(data.content);
+			},
+			 error: function(err) {
+		           console.log(err); // error msg 요청	        	
+			}
+		});
+	
+	
+	//글수정
+	 $('#boardUpdateFormBtn').click(function(){
 	$('#subjectDiv').empty(); //document.getElementById("subjectDiv").innerText == "";
 	$('#contentDiv').empty(); //document.getElementById("contentDiv").innerText == "";
 	
@@ -70,26 +89,24 @@ $('#checkBWBtn').click(function(){
 		$.ajax({
 			type: 'post',
 			
-			url: '/miniProject_jQuery/board/boardWrite.do',
+			url: '/miniProject_jQuery/board/boardUpdate.do',
 			
 			//data: 'subject=' + $('#subject').val() +'&content=' +$('#content').val(),
-			data: $('#boardWriteForm').serialize(),
-			
+			data: $('#boardUpdateForm').serialize(), //seq, subject, content
 			
 			success: function(){
-				alert("글 작성 완료");
-				location.href='/miniProject_jQuery/board/boardList.do?pg=1';
+				alert("글 수정 완료");
+				location.href='/miniProject_jQuery/board/boardList.do?pg=${requestScope.pg}';
 			
 			},
-		
 	        error: function(err) {
 	           console.log(err); // error msg 요청
 	        }	
 		});
 	}
-	});
-});	
+	}); 
 
+	});
 
 </script>
 </body>

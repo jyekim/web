@@ -47,7 +47,7 @@
  	
  		<span id="boardViewSpan"> 
  		 	<input type="button" value="글 수정" id="boardUpdateFormBtn">
- 		 
+ 	
  		 	<input type="button" value="글 삭제" id="boardDeleteBtn">
  		</span>
  	
@@ -57,8 +57,7 @@
  	
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script type="text/javascript" src="../js/boardView.js">
+<script type="text/javascript" src="../js/boardView.js"></script>
 
-</script>
 </body>
 </html>
